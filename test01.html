@@ -1,0 +1,82 @@
+<html>
+<head>
+    
+</head>
+<body>
+    <div>hello</div>
+    <div id="box">world</div>
+    <div>黑马</div>
+    <input type="button" id="btn" value="点我">
+
+</body>
+<script>
+    var box =document.getElementById('box');
+    var divs =document.getElementsByTagName("div");
+    console.dir(box);
+    console.log(box);
+    console.log(box.constructor);
+    
+    setbox(box);
+
+    function setbox (x){
+        x.aaa=10
+    }
+
+    console.dir([]);
+    console.log([]);
+    console.log([].constructor);
+
+    console.log(divs);
+    console.log("--------------------");
+    for(var div in divs){
+        console.log(div);
+    }
+
+    var btn = document.getElementById('btn');
+    btn.onclick=function(e){
+        console.log(e);
+        alert('别点我，疼');
+    }
+    
+
+    arr = [1,2,3,4]
+    arr.forEach(element => {
+        console.log(element);
+    });
+
+    for (const key in divs) {
+        if (divs.hasOwnProperty(key)) {
+            const element = divs[key];
+            console.log(element);
+        }
+    }
+
+    var taaa=function testaa(a1,a2){
+        console.log(a1);
+        console.log(a2);
+        console.log("---------aaaaa----------");
+        bb();
+
+        function bb(){
+            console.log("bbbbbbbb");
+        }
+        console.log(this);
+    }.bind({name:"aaa"})
+
+    taaa(1,3);
+    //testaa(1)
+    //testaa(1,2)
+    //testaa(1,2,3)
+    //var cc = testaa(6,7)
+
+
+//console.log(testaa);
+//console.dir(testaa);
+console.dir(taaa);
+console.dir("*************************");
+console.dir(Array);
+Array.prototype.forEach.call([1,3,4],function(item){
+    console.log(item);
+})
+</script>
+</html>
